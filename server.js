@@ -5,6 +5,8 @@ const cors = require("cors");
 require("dotenv").config();
 
 const contactUsRoutes = require("./Routes/contactUsRoutes.js");
+const otpRoutes = require("./Routes/otpRoutes.js");
+const paymentRoutes = require("./Routes/paymentRoutes.js");
 
 const app = express();
 const PORT = process.env.PORT || 5003;
@@ -22,6 +24,8 @@ app.use(
 connectDB();
 
 app.use("/api/contactus", contactUsRoutes);
+app.use("/api/payment", paymentRoutes);
+app.use("/api/otp", otpRoutes);
 
 // Start the server
 app.listen(PORT, () => {
