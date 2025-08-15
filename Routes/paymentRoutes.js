@@ -7,10 +7,11 @@ const router = express.Router();
 // Create a new donation
 router.post("/", async (req, res) => {
   try {
-    const { name, email, phone, message, amount, status } = req.body;
+    const { Id, name, email, phone, message, amount, status } = req.body;
 
     // Create new donation document
     const newDonation = new Donation({
+      Id,
       name,
       email,
       phone,
